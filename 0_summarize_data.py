@@ -112,6 +112,36 @@ def main():
     
     utils.unParseTable(config_table,config_path,'\t')
     print('writing genome configuration to %s' % (config_path))
+
+
+    print('\n\n')
+    print('#======================================================================')
+    print('#==================III. DETECTING DEPENDENCIES=========================')
+    print('#======================================================================')
+    print('\n\n')
+
+    from distutils.spawn import find_executable
+
+    # Try to find bamliquidator, bamliquidator_batch.py, and fimo 
+    bamliquidatorString = find_executable('bamliquidator')
+    if bamliquidatorString is None:
+        raise ValueError('bamliquidator not found in path')
+    else:
+        print('found bamliquidator')
+
+    bamliquidatorBatchString = find_executable('bamliquidator_batch.py')
+    if bamliquidatorString is None:
+        raise ValueError('bamliquidator_batch.py not found in path')
+    else:
+        print('found bamliquidator_batch.py')
+
+    bamliquidatorBatchString = find_executable('fimo')
+    if bamliquidatorString is None:
+        raise ValueError('fimo not found in path')
+    else:
+        print('found fimo')
+
+    
 #==========================================================================
 #==================================THE END=================================
 #==========================================================================
