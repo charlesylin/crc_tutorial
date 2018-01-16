@@ -100,7 +100,7 @@ def main():
     print('#======================================================================')
     print('\n\n')
 
-    macsEnrichedFolder = '%smacsEnrichedFolder/' % (projectFolder) #folder with macs peak output beds
+    macsEnrichedFolder = '%smacsEnriched/' % (projectFolder) #folder with macs peak output beds
     parentFolder = utils.formatFolder('%srose/' % (projectFolder),True) # create a folder to store ROSE2 output
     namesList = ['MM1S_H3K27AC','MM1S_MED1'] # calling ROSE2 on H3K27AC and MED1 defined enhancers
     bash_file = '%sMM1S_ROSE_CALLS.sh' % (parentFolder)
